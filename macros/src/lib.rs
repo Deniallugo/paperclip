@@ -29,6 +29,7 @@ use syn::{
 /// object ([example](https://paperclip.waffles.space/paperclip/v2/)). This adds the necessary fields (in addition to your own fields) and implements the
 /// `Schema` trait for parsing and codegen.
 #[cfg(feature = "v2")]
+#[proc_macro_error]
 #[proc_macro_attribute]
 pub fn api_v2_schema_struct(_attr: TokenStream, input: TokenStream) -> TokenStream {
     self::core::emit_v2_schema_struct(input)
